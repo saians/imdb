@@ -44,6 +44,7 @@ public class ActorServiceImpl implements ActorService {
         return Optional.ofNullable(actorResponse);
     }
 
+//This is incomplete implementation
     public Optional<Document>  performLookup(ObjectId actorId) {
         //65b6e760407a9b5192ef94fa
         // lookup needed in relations as well
@@ -58,8 +59,6 @@ public class ActorServiceImpl implements ActorService {
                 .foreignField("tconst")
                 .as("MovieInfo");
 
-//        AddFieldsOperation.AddFieldsOperationBuilder addFieldsOperation = addFields()
-//                .addFieldWithValueOf("NewTitleId", new Document("$split", Arrays.asList("$knownForTitles", ",")));
 
         Aggregation agg =newAggregation(
                 match,
